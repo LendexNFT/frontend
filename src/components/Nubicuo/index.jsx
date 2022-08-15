@@ -1,9 +1,10 @@
 // import React, { useEffect, useState } from "react";
 // import { CartState } from "../../context/Context";
-import SearchCom from "../Helpers/SearchCom";
+// import SearchCom from "../Helpers/SearchCom";
 import Layout from "../Partials/Layout";
 import MyAssetsWidget from "./MyAssetsWidget";
-import WhatIneedWidget from "./WhatIneedWidget";
+import SearchBorrowAssets from "./SearchBorrowAssets";
+// import WhatIneedWidget from "./WhatIneedWidget";
 import YourBorrowsWidget from "./YourBorrowsWidget";
 import YourSupliesWidget from "./YourSupliesWidget";
 
@@ -54,8 +55,7 @@ export default function Nubicuo () {
                 </div>
               </div>
               <div className=" h-full">
-                <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
-                  {/* heading */}
+                {/* <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
                   <div className="heading mb-5 flex justify-between items-center">
                     <h3 className="text-xl font-bold text-dark-gray">
                       What I need!
@@ -66,7 +66,8 @@ export default function Nubicuo () {
                   <div className="h-[286px]">
                     <WhatIneedWidget />
                   </div>
-                </div>
+                </div> */}
+                <SearchBorrowAssets />
               </div>
             </div>
           </div>

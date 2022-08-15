@@ -24,10 +24,10 @@ export default function YourSupliesWidget () {
           <table className="w-full text-sm bg-white  text-left text-gray-500 dark:text-gray-400">
             <tbody>
               <tr className="text-base text-thin-light-gray border-b default-border-bottom ">
-                <td className="py-4 text-center">OS</td>
+                <td className="py-4 text-left">offer</td>
                 {/* <td className="py-4 text-center">Browsers</td>  */}
-                <td className="py-4 text-center">Location</td>
-                <td className="py-4 text-center">Last session</td>
+                <td className="py-4 text-center">Assets</td>
+                <td className="py-4 text-center">Qty</td>
                 <td className="py-4 text-center">Status</td>
                 {/* <td className="py-4 text-center"></td> */}
               </tr>
@@ -52,7 +52,7 @@ export default function YourSupliesWidget () {
                   </td>
                   <td className="text-center py-4">
                     <span className="text-base text-thin-light-gray font-medium whitespace-nowrap px-2">
-                      2 days ago
+                      2 
                     </span>
                   </td>
                   <td className="text-center py-4">

@@ -38,7 +38,9 @@ export default function ShopAssetWidget ({ className }) {
                 </div>
                 <div>
                   <p className="text-thin-light-gray text-base leading-3">
-                    Owned by
+                    Loaned to---
+
+
                   </p>
                   <p className="text-xl text-dark-gray font-bold">
                     {nftInfo[0].ownedBy}

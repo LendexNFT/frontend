@@ -1,4 +1,5 @@
-
+/* eslint-disable */
+import React from 'react';
 import { CartState } from "../../context/Context";
 import WhatIneedItem from "./WhatIneedItem";
 
@@ -7,6 +8,7 @@ export default function WhatIneedWidget () {
   const {
     state: { products },
   } = CartState();
+
 
   return (
     <div className="recent-transaction-widget overflow-auto overflow-x-auto w-full h-full p-7 rounded-2xl bg-white">
@@ -20,5 +22,7 @@ export default function WhatIneedWidget () {
       </div>
 
     </div>
-  );
+  )
 }
+
+

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import iconLogo from "../../assets/images/icon-logo.png";
 
 // export default function HeaderLanding({ logoutModalHandler, sidebarHandler }) {
 export default function HeaderLanding () {
@@ -20,7 +20,7 @@ export default function HeaderLanding () {
             className="xl:hidden block mr-10"
             type="button"
           >
-            <svg
+            {/* <svg
               width="25"
               height="19"
               viewBox="0 0 25 19"
@@ -61,7 +61,8 @@ export default function HeaderLanding () {
                   <stop offset="1" stopColor="#5356FB" />
                 </linearGradient>
               </defs>
-            </svg>
+            </svg> */}
+            <img src={iconLogo} alt="" className="w-8 h-8" />
           </button>
 
           <div className="market-place-section w-full">

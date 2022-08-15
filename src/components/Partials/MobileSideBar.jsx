@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 // import logo from "../../assets/images/logo-2.svg";
-import logo from "../../assets/images/logo-1.svg";
+import logo from "../../assets/images/logo-nubicuo.png";
 import Icons from "../Helpers/Icons";
 
 export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
@@ -10,10 +10,10 @@ export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
       {/* logo-area */}
       <div className="w-full flex items-center transition-all duration-300 relative ease-in-out mb-14">
         <div className="sidebar-logo enter">
-          <img src={logo} alt="nft" />
+          <img src={logo} alt="nft" onClick={action} />
         </div>
 
-        <span className="absolute right-5 top-5 z-20" onClick={action}>
+        {/* <span className="absolute right-5 top-5 z-20" onClick={action}>
           <svg
             width="25"
             height="19"
@@ -56,7 +56,7 @@ export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
               </linearGradient>
             </defs>
           </svg>
-        </span>
+        </span> */}
       </div>
       {/* menu and settings item */}
       <div className="menu-setting-items mb-11">

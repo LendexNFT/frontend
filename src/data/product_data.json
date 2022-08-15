@@ -1,5 +1,5 @@
 {
-  "datas": [
+  "data": [
     {
       "id": 0,
       "username": "Bilout",
@@ -72,5 +72,33 @@
       "remaing": "2023-03-04 4:00:00",
       "title": "culpa ad proident"
     }
+  ],
+  "dataBorrows": [{
+      "id": 0,
+      "username": "Bilout",
+      "profile_img": "profile.png",
+      "price": "75,320 ETH",
+      "thumbnil": "tranding-1.jpg",
+      "remaing": "2023-03-04 4:00:00",
+      "title": "laborum cupidatat sit"
+    },
+    {
+      "id": 1,
+      "username": "Bilout",
+      "profile_img": "profile.png",
+      "price": "75,320 ETH",
+      "thumbnil": "tranding-2.jpg",
+      "remaing": "2023-03-04 4:00:00",
+      "title": "velit occaecat voluptate"
+    },
+    {
+      "id": 2,
+      "username": "Bilout",
+      "profile_img": "profile.png",
+      "price": "75,320 ETH",
+      "thumbnil": "tranding-3.jpg",
+      "remaing": "2023-03-04 4:00:00",
+      "title": "est reprehenderit amet"
+    }
   ]
-}
+    }

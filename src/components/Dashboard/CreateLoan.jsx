@@ -9,10 +9,10 @@ export default function CreateLoan ({ className }) {
     >
       <div className="lg:w-8/12 w-full mb-8 lg:mb-0">
         <h1 className="text-2xl text-dark-gray font-bold mb-2">
-          Borrow an NFT or lend your own and earn interest.
+          Got something to borrow? Looking for something?
         </h1>
         <p className="text-base text-thin-light-gray tracking-wide">
-          Lend or rent NFTs and climb your favorite game without completely getting rid of your assets
+          Lend or borrow your NFTs and climb your favorite game without completely getting rid of your assets
         </p>
       </div>
       <div className="flex-1 flex lg:justify-end">

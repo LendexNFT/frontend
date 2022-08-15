@@ -53,7 +53,7 @@ function CountDown({ lastDate = "" }) {
   });
   return (
     <span>
-      {showHour} : {showMinute} : {showSecound}
+      {year}-{month}-{date} {showHour}:{showMinute}:{showSecound}
     </span>
   );
 }
