@@ -26,7 +26,14 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
           }`}
       >
         <div className={`sidebar-logo ${sidebar ? "enter" : ""}`}>
+          <NavLink
+            className="nav-item flex items-center justify-start space-x-3.5"
+            to="/"
+          >
           <img src={logo} alt="nft" onClick={action} />
+            {/* <span className="text-sm text-dark-gray">NFT</span>
+            <span className="text-sm text-dark-gray">Wallet</span> */}
+          </NavLink>
         </div>
 
       </div>
@@ -56,73 +63,13 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
                     className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
                       }`}
                   >
-                    Dashboard
-                  </span>
-                </NavLink>
-              </li>
-              {/* <li className="item group">
-                <NavLink
-                  to="/active-bids"
-                  className={`nav-item flex items-center  ${((navData) => (navData.isActive ? "active" : ""),
-                    sidebar ? "justify-start space-x-3.5" : "justify-center")
-                    }`}
-                >
-                  <span className="item-icon group-hover:bg-purple group-hover:text-white w-8 h-8 flex justify-center items-center transition-all duration-300 ease-in-out  bg-light-purple rounded-full text-dark-gray">
-                    <Icons name="active-bids" />
-                  </span>
-                  <span
-                    className={`item-content relative group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray font-medium ${sidebar ? "active flex-1" : "w-0"
-                      }`}
-                  >
-                    Active Bids
-                    <span className="absolute left-24 -top-1 text-sm flex justify-center items-center w-5 h-5 primary-gradient rounded-full text-white">
-                      19
-                    </span>
+                    Landing page
                   </span>
                 </NavLink>
               </li>
               <li className="item group">
                 <NavLink
-                  to="/market-place"
-                  className={`nav-item flex items-center ${((navData) => (navData.isActive ? "active" : ""),
-                    sidebar ? "justify-start space-x-3.5" : "justify-center")
-                    }`}
-                >
-                  <span className="item-icon group-hover:bg-purple group-hover:text-white w-8 h-8 flex justify-center items-center transition-all duration-300 ease-in-out  bg-light-purple rounded-full text-dark-gray">
-                    <Icons name="market" />
-                  </span>
-                  <span
-                    className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
-                      }`}
-                  >
-                    Marketplace
-                    <span className="absolute left-28 -top-1 text-sm flex justify-center items-center w-5 h-5 bg-purple rounded-full text-white">
-                      09
-                    </span>
-                  </span>
-                </NavLink>
-              </li>
-              <li className="item group">
-                <NavLink
-                  to="/my-wallet"
-                  className={`nav-item flex items-center ${((navData) => (navData.isActive ? "active" : ""),
-                    sidebar ? "justify-start space-x-3.5" : "justify-center")
-                    }`}
-                >
-                  <span className="item-icon group-hover:bg-purple group-hover:text-white w-8 h-8 flex justify-center items-center transition-all duration-300 ease-in-out  bg-light-purple rounded-full text-dark-gray">
-                    <Icons name="wallet-two" />
-                  </span>
-                  <span
-                    className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
-                      }`}
-                  >
-                    My Wallet
-                  </span>
-                </NavLink>
-              </li>
-              <li className="item group">
-                <NavLink
-                  to="/my-collection"
+                  to="/dashboard"
                   className={`nav-item flex items-center ${((navData) => (navData.isActive ? "active" : ""),
                     sidebar ? "justify-start space-x-3.5" : "justify-center")
                     }`}
@@ -134,13 +81,13 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
                     className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
                       }`}
                   >
-                    My collections
+                    Dasboard
                   </span>
                 </NavLink>
-              </li> */}
+              </li>
               <li className="item group">
                 <NavLink
-                  to="/card-transation"
+                  to="/lend"
                   className={`nav-item flex items-center ${((navData) => (navData.isActive ? "active" : ""),
                     sidebar ? "justify-start space-x-3.5" : "justify-center")
                     }`}
@@ -152,7 +99,25 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
                     className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
                       }`}
                   >
-                    Card transation
+                    Lend
+                  </span>
+                </NavLink>
+              </li>
+              <li className="item group">
+                <NavLink
+                  to="/borrow"
+                  className={`nav-item flex items-center ${((navData) => (navData.isActive ? "active" : ""),
+                    sidebar ? "justify-start space-x-3.5" : "justify-center")
+                    }`}
+                >
+                  <span className="item-icon group-hover:bg-purple group-hover:text-white w-8 h-8 flex justify-center items-center transition-all duration-300 ease-in-out  bg-light-purple rounded-full text-dark-gray">
+                    <Icons name="star" />
+                  </span>
+                  <span
+                    className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
+                      }`}
+                  >
+                    Borrow
                   </span>
                 </NavLink>
               </li>

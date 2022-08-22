@@ -3,6 +3,8 @@ export const cartReducer = (state, action) => {
     case "ADD_TO_CART":
       return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
     case "REMOVE_FROM_CART":
+
+    console.log('REMOVE_FROM_CART', action.payload);
       return {
         ...state,
         cart: state.cart.filter((c) => c.id !== action.payload.id),
@@ -51,11 +53,16 @@ export const yuorSuppliesAssetsReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       return { ...state, yourSuppliesCart: [...state.yourSuppliesCart, { ...action.payload, qty: 1 }] };
-    case "REMOVE_FROM_CART":
+      case "REMOVE_FROM_CART___":
       return {
         ...state,
-        yourSuppliesCart: state.cart.filter((c) => c.id !== action.payload.id),
+        yourSuppliesCart: state.yourSuppliesCart.filter((c) => c.id !== action.payload.id),
       };
+      case "REMOVE_FROM_CART":
+        return {
+          ...state,
+          yourSuppliesCart: state.yourSuppliesCart.filter((c) => c.id !== action.payload.id),
+        };
     // case "CHANGE_CART_QTY":
     //   return {
     //     ...state,

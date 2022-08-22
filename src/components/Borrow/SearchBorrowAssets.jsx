@@ -49,8 +49,10 @@ export default function SearchBorrowAssets () {
     <>
       <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
         {/* heading */}
+        {/* <div className="heading mb-5 flex justify-between items-center"> */}
         <div className="heading flex justify-between items-center">
-          <h3 className="w-1/5 text-xl font-bold text-dark-gray">
+          {/* <h3 className="w-1/5 text-xl font-bold text-dark-gray"> */}
+          <h3 className="w-2/5 text-xl font-bold text-dark-gray">
             What I need!
           </h3>
           {/* <SearchCom /> */}

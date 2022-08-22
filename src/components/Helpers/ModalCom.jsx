@@ -10,6 +10,7 @@ export default function ModalCom({ action, children, situation }) {
     };
   });
 
+
   return (
     <div className="modal-com">
       <div
