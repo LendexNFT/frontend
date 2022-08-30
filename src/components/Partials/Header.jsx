@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bank1 from "../../assets/images/bank-1.png";
-import bank2 from "../../assets/images/bank-2.png";
-import bank3 from "../../assets/images/bank-3.png";
 import bank4 from "../../assets/images/bank-4.png";
 import profileImg from "../../assets/images/profile-pic.jpg";
+import { NETWORKS } from "../../config/networks";
 import useToggle from "../../hooks/useToggle";
+import { useWallet } from "../../hooks/useWallet";
 import Icons from "../Helpers/Icons";
 import ModalCom from "../Helpers/ModalCom";
 import SearchCom from "../Helpers/SearchCom";
@@ -18,6 +18,10 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
   const [notificationDropdown, setNotificationValue] = useToggle(false);
   const [userProfileDropdown, setProfileDropdown] = useToggle(false);
   const [moneyPopup, setPopup] = useToggle(false);
+
+  const { connect, disconnect, userWallet } = useWallet();
+  const userData = localStorage.getItem("user_address");
+
   const handlerBalance = () => {
     setbalanceValue.toggle();
     if (notificationDropdown) {
@@ -60,6 +64,27 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
     setPopup.toggle();
     setbalanceValue.set(false);
   };
+
+  const connectWallet = async () => {
+    try {
+      await connect("Metamask", NETWORKS[0]);
+      setPopup.toggle();
+    } catch (error) {
+      console.error("ERR: ", error);
+    }
+  };
+
+  const disconnectWallet = async () => {
+    try {
+      await disconnect();
+      setPopup.toggle();
+    } catch (error) {
+      console.log("ERR: ", error);
+    }
+  };
+
+  const formattedWallet = userWallet();
+
   return (
     <>
       <div className="header-wrapper backdrop-blur-sm bg-[#efedfe5e]/60 w-full h-full flex items-center xl:px-0 md:px-10 px-5">
@@ -88,7 +113,7 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                   <Icons name="wallet" />
                 </span>
                 <p className="lg:text-xl text-lg font-bold text-white">
-                  $ 234,435.34
+                  {formattedWallet || "Connect Wallet"}
                 </p>
                 <span className="lg:block hidden">
                   <Icons name="deep-plus" />
@@ -123,12 +148,12 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                             75,320 ETH
                           </p>
                           <p className="usd text-base text-thin-light-gray text-right">
-                            (773.69 USD)
+                            (7730.69 USD)
                           </p>
                         </div>
                       </div>
                     </li>
-                    <li className="content-item py-4 border-b border-light-purple hover:border-purple">
+                    {/* <li className="content-item py-4 border-b border-light-purple hover:border-purple">
                       <div className="sm:flex justify-between items-center">
                         <div className="account-name flex space-x-4 items-center mb-2 sm:mb-0">
                           <div className="icon w-14 h-14 transition duration-300 ease-in-out rounded-full flex justify-center items-center bg-light-purple">
@@ -149,29 +174,7 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                           </p>
                         </div>
                       </div>
-                    </li>
-                    <li className="content-item py-4 border-b border-light-purple hover:border-purple">
-                      <div className="sm:flex justify-between items-center">
-                        <div className="account-name flex space-x-4 items-center mb-2 sm:mb-0">
-                          <div className="icon w-14 h-14 transition duration-300 ease-in-out rounded-full flex justify-center items-center bg-light-purple">
-                            <img src={bank3} alt="" />
-                          </div>
-                          <div className="name">
-                            <p className="text-base text-dark-gray font-medium">
-                              Bitski
-                            </p>
-                          </div>
-                        </div>
-                        <div>
-                          <p className="eth text-xl font-bold text-purple">
-                            99,123 ETH
-                          </p>
-                          <p className="usd text-base text-thin-light-gray text-right">
-                            (773.69 USD)
-                          </p>
-                        </div>
-                      </div>
-                    </li>
+                    </li> */}
                     <li className="content-item py-5">
                       <div className="sm:flex justify-between items-center">
                         <div className="account-name flex space-x-4 items-center mb-2 sm:mb-0">
@@ -201,7 +204,7 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                       type="button"
                       className="w-[122px] h-11 flex justify-center items-center btn-gradient text-base rounded-full text-white"
                     >
-                      Add Money
+                      {userData ? "Disconnect" : "Connect Wallet"}
                     </button>
                   </div>
                 </div>
@@ -733,12 +736,20 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                         type="button"
                         className="w-[122px] h-11 flex justify-center items-center border-gradient  text-base rounded-full text-back"
                       >
-                        <span className="text-gradient"> Cannect</span>
+                        <span
+                          className="text-gradient"
+                          onClick={() =>
+                            userData ? disconnectWallet() : connectWallet()
+                          }
+                        >
+                          {" "}
+                          {userData ? "Disconnect" : "Connect"}
+                        </span>
                       </button>
                     </div>
                   </div>
                 </li>
-                <li
+                {/* <li
                   className="content-item px-5 py-2.5 lg:mb-8 mb-3 border rounded-lg b border-light-purple hover:border-purple"
                   style={{ boxShadow: "0px 16px 93px 0px #55526329" }}
                 >
@@ -762,32 +773,7 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                       </button>
                     </div>
                   </div>
-                </li>
-                <li
-                  className="content-item px-5 py-2.5 mb-8 border b rounded-lg border-light-purple hover:border-purple"
-                  style={{ boxShadow: "0px 16px 93px 0px #55526329" }}
-                >
-                  <div className="sm:flex justify-between items-center">
-                    <div className="account-name flex space-x-4 items-center mb-2 sm:mb-0">
-                      <div className="icon w-14 h-14 transition duration-300 ease-in-out rounded-full flex justify-center items-center bg-light-purple">
-                        <img src={bank3} alt="" />
-                      </div>
-                      <div className="name">
-                        <p className="text-xl font-bold text-dark-gray">
-                          Bitski
-                        </p>
-                      </div>
-                    </div>
-                    <div>
-                      <button
-                        type="button"
-                        className="w-[122px] h-11 flex justify-center items-center border-gradient  text-base rounded-full text-back"
-                      >
-                        <span className="text-gradient"> Cannect</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
+                </li> */}
                 <li
                   className="content-item px-5 py-2.5 mb-8 border b rounded-lg border-light-purple hover:border-purple"
                   style={{ boxShadow: "0px 16px 93px 0px #55526329" }}
@@ -808,20 +794,12 @@ export default function Header({ logoutModalHandler, sidebarHandler }) {
                         type="button"
                         className="w-[122px] h-11 flex justify-center items-center btn-gradient text-base rounded-full text-white"
                       >
-                        Cannected
+                        Connected
                       </button>
                     </div>
                   </div>
                 </li>
               </ul>
-              <div className="add-money-btn flex justify-center items-center">
-                <Link
-                  to="#"
-                  className="text-18 rounded-full text-thin-light-gray"
-                >
-                  View Wallet
-                </Link>
-              </div>
             </div>
           </div>
         </ModalCom>
