@@ -1,15 +1,15 @@
 /* eslint-disable */
 import Toaster from "./components/Helpers/Toaster";
+import Providers from "./Providers";
 import Routers from "./Routers";
-// import { StoreProvider } from "./store/StoreProvider";
 
 function App() {
   return (
     <>
-      {/* <AppProvider> */}
-      <Routers />
-      <Toaster />
-      {/* </AppProvider> */}
+      <Providers>
+        <Routers />
+        <Toaster />
+      </Providers>
     </>
   );
 }
