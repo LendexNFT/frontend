@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import components
 
 // import image
-import Img from '../../assets/images/banner-img.png';
+import Img from '../../assets/images/nub_logo_276x80.png';
 import Team from './Team';
 
 const Banner = () => (

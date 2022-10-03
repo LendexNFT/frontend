@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import logo from "../../assets/images/logo-2.svg";
-import logo from "../../assets/images/logo-nubicuo.png";
+import logo from "../../assets/images/nub_logo_276x80.png";
 import Icons from "../Helpers/Icons";
 
 export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
@@ -63,7 +62,7 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
                     className={`item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium ${sidebar ? "active flex-1" : "w-0"
                       }`}
                   >
-                    Landing page
+                    Market Overview
                   </span>
                 </NavLink>
               </li>
@@ -281,7 +280,7 @@ export default function Sidebar ({ sidebar, action, logoutModalHandler }) {
             className={`signout-btn-content text-white text-xl font-bold ${sidebar ? "active" : ""
               }`}
           >
-            Signout
+            Sign out
           </span>
         </button>
       ) : (
