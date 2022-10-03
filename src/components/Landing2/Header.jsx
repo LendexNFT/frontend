@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import components
-import Logo from '../../assets/images/logo-nubicuo.png';
+import Logo from '../../assets/images/nub_logo_276x80.png';
 import Nav from './Nav';
 
 // import icons

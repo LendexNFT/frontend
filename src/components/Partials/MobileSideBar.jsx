@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import logo from "../../assets/images/logo-2.svg";
-import logo from "../../assets/images/logo-nubicuo.png";
+import logo from "../../assets/images/nub_logo_276x80.png";
 import Icons from "../Helpers/Icons";
 
 export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
@@ -17,7 +16,6 @@ export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
           <img src={logo} alt="nft" onClick={action} />
           </NavLink>
         </div>
-
       </div>
       {/* menu and settings item */}
       <div className="menu-setting-items mb-11">
@@ -37,7 +35,7 @@ export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
                     <Icons name="dashboard" />
                   </span>
                   <span className="item-content group-hover:text-purple text-[18px] transition-all duration-300 ease-in-out text-lighter-gray relative font-medium active flex-1">
-                    Landing page
+                    Market Overview
                   </span>
                 </NavLink>
               </li>
@@ -242,7 +240,7 @@ export default function MobileSidebar({ sidebar, action, logoutModalHandler }) {
               sidebar ? "active" : ""
             }`}
           >
-            Signout
+            Sign out
           </span>
         </button>
       ) : (
