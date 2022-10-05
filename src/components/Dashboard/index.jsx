@@ -3,9 +3,9 @@
 // import datas from "../../data/product_data.json";
 import dataBorrows from "../../data/borrow_data.json";
 import dataLens from "../../data/lend_data.json";
+import CreateOrder from "../Partials/CreateOrder";
 import Layout from "../Partials/Layout";
-import CreateLoan from "./CreateLoan";
-import LoanHistory from "./LoanHistory";
+import TxHistory from "../Partials/TxHistory";
 import MyBorrowStatus from "./MyBorrowStatus";
 import MyLendStatus from "./MyLendStatus";
 // import MyLoanStatus from "./MyLoanStatus";
@@ -21,14 +21,12 @@ export default function Nubicuo () {
       <Layout>
 
         <div className="home-page-wrapper">
-          <CreateLoan />
+          <CreateOrder />
         </div>
         <MyLendStatus allLends={allLends} className="mb-10" />
         <MyBorrowStatus allBorrows={allBorrows} className="mb-10" />
-        <div className="home-page-wrapper">
-          <CreateLoan />
-        </div>
-        <LoanHistory className="mb-10" />
+        
+        <TxHistory className="mb-10" />
       </Layout>
     </>
   );

@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import useToggle from "../../hooks/useToggle";
 import ModalCom from "../Helpers/ModalCom";
 
-export default function CreateLoan ({ className }) {
-
-
+export default function CreateOrder ({ className }) {
   const [balanceDropdown, setbalanceValue] = useToggle(false);
   const [moneyPopup, setPopup] = useToggle(false);
   const addMoneyHandler = () => {
@@ -22,10 +20,10 @@ export default function CreateLoan ({ className }) {
     >
       <div className="lg:w-8/12 w-full mb-8 lg:mb-0">
         <h1 className="text-2xl text-dark-gray font-bold mb-2">
-          Got something to borrow? Looking for something?
+          Market Overview
         </h1>
         <p className="text-base text-thin-light-gray tracking-wide">
-          Lend or borrow your NFTs and climb your favorite game without completely getting rid of your assets
+          Search all over the protocol for swap, lending and borrowing open orders and climb your favorite game without getting rid of your assets
         </p>
       </div>
       <div className="flex-1 flex lg:justify-end">
@@ -44,7 +42,7 @@ export default function CreateLoan ({ className }) {
           <div className="lg:w-[580px] sm:w-[450px] w-full rounded-2xl h-auto bg-white">
             <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-6 flex items-center justify-between">
               <h3 className="text-xl font-bold text-dark-gray">
-                I want to
+                Create Order
               </h3>
               <span onClick={addMoneyHandler}>
                 <svg
@@ -92,7 +90,7 @@ export default function CreateLoan ({ className }) {
                   to="#"
                   className="text-18 rounded-full text-thin-light-gray"
                 >
-                  Click on your options button
+                  Choose order type
                 </Link>
               </div>
             </div>

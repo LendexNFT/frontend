@@ -2,7 +2,6 @@
 import React from "react";
 import BorrowStatusCard from "./BorrowStatusCard";
 // import BorrowStatusCard from "./BorrowStatusCard";
-// import CreateLoan from "./CreateLoan";
 import DataIterationItem from "./DataIterationItem";
 import LoanStatusCard from "./LendStatusCard";
 
@@ -50,12 +49,7 @@ export default function MyLoanStatus ({ className, allLoans = [] }) {
               )}
             </DataIterationItem>
           </div>
-
         </div>
-        {/* <div className="home-page-wrapper">
-          <CreateLoan />
-        </div> */}
-
       </div>
 
       <div className={`all-bid-section w-full ${className || ""}`}>
@@ -88,15 +82,8 @@ export default function MyLoanStatus ({ className, allLoans = [] }) {
               )}
             </DataIterationItem>
           </div>
-
         </div>
-        {/* <div className="home-page-wrapper">
-          <CreateLoan />
-        </div> */}
-
       </div>
-
-
     </>
   );
 }

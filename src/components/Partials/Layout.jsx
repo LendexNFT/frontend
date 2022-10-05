@@ -138,24 +138,25 @@ export default function Layout ({ children }) {
               </div>
               <div className="mb-6">
                 <p className="text-2xl tracking-wide text-center">
-                  Are you sure you want to Logout NETMAX admin Penal?
+                  Are you sure you want to Logout?
                 </p>
               </div>
               <div className="flex space-x-2.5">
                 <button
-                  onClick={logOut}
-                  type="button"
-                  className="text-white primary-gradient text-18 tracking-wide px-4 py-3 rounded-full"
-                >
-                  Yes Logout
-                </button>
-                <button
                   onClick={logoutModalHandler}
                   type="button"
-                  className=" border-gradient text-18 tracking-wide px-4 py-3 rounded-full"
+                  className="border-gradient text-18 tracking-wide px-10 py-3 rounded-full"
                 >
-                  <span className="text-gradient">Not Now</span>
+                  <span className="text-gradient">No</span>
                 </button>
+                <button
+                  onClick={logOut}
+                  type="button"
+                  className="border-gradient text-18 tracking-wide px-10 py-3 rounded-full"
+                >
+                  <span className="text-gradient">Yes</span>
+                </button>
+                
               </div>
             </div>
           </div>

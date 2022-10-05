@@ -131,11 +131,7 @@ export default function Header({ sidebarHandler }) {
                       {userData ? "Disconnect" : "Connect Wallet"}
                     </button>
                   </div> */}
-
-              
             </div>
-                      
-            
           </div>
         </div>
       </div>
@@ -153,7 +149,7 @@ export default function Header({ sidebarHandler }) {
           <div className="lg:w-[580px] sm:w-[450px] w-full rounded-2xl h-auto bg-white">
             <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-6 flex items-center justify-between">
               <h3 className="text-xl font-bold text-dark-gray">
-                Connect to a wallet
+                Connect to...
               </h3>
               <span onClick={addMoneyHandler}>
                 <svg
