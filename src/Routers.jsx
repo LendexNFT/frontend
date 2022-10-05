@@ -8,7 +8,6 @@ import LendPage from "./views/LendPage";
 import OverviewPage from "./views/OverviewPage";
 import ShopAssetsDetailsPage from "./views/ShopAssetsDetailsPage";
 
-
 export default function Routers () {
   return (
     <ScrollToTop>
@@ -20,10 +19,7 @@ export default function Routers () {
         <Route exact path="/lend" element={<LendPage />} />
         <Route exact path="/borrow" element={<BorrowPage />} />
         <Route exact path="/dashboard" element={<DashboardPage />} />
-        {/* <Route exact path="/" element={<LandingPage />} /> */}
-        {/* <Route exact path="/" element={<Landing2Page />} /> */}
-
-
+        
         {/* private route */}
 
 

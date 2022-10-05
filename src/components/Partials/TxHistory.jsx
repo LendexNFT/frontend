@@ -4,7 +4,7 @@ import dataImage2 from "../../assets/images/data-table-user-2.png";
 import dataImage3 from "../../assets/images/data-table-user-3.png";
 import dataImage4 from "../../assets/images/data-table-user-4.png";
 
-export default function LoanHistory ({ className }) {
+export default function TxHistory ({ className }) {
   return (
     <div
       className={`update-table w-full p-8 bg-white overflow-hidden rounded-2xl section-shadow ${className || ""
@@ -13,7 +13,7 @@ export default function LoanHistory ({ className }) {
       <div className="header w-full sm:flex justify-between items-center mb-5">
         <div className="flex space-x-2 items-center mb-2 sm:mb-0">
           <h1 className="text-xl font-bold text-dark-gray tracking-wide">
-            All Transactions
+            ALL TRANSACTIONS
           </h1>
           <span className="w-7 h-7 flex justify-center items-center bg-pink text-white text-xs rounded-full">
             435

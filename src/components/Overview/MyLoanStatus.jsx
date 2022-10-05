@@ -1,5 +1,5 @@
 import React from "react";
-import CreateLoan from "./CreateLoan";
+import CreateOrder from "../Partials/CreateOrder";
 import DataIterationItem from "./DataIterationItem";
 import LoanStatusCard from "./LoanStatusCard";
 
@@ -23,7 +23,7 @@ export default function MyLoanStatus ({ className, allBids = [] }) {
 
         </div>
         <div className="home-page-wrapper">
-          <CreateLoan />
+          <CreateOrder />
         </div>
 
       </div>
