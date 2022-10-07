@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from "react";
-import BorrowStatusCard from "./BorrowStatusCard";
+import BorrowStatusCard from "../components/Dashboard/BorrowStatusCard";
 // import BorrowStatusCard from "./BorrowStatusCard";
 import DataIterationItem from "./DataIterationItem";
 import LoanStatusCard from "./LendStatusCard";
