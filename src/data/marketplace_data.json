@@ -9,7 +9,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": true,
-      "thumbnil": "marketplace-product-1.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/sword",
       "title": "fugiat labore cillum",
       "isActive": true
     },
@@ -22,7 +22,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-2.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/shield",
       "title": "veniam dolore dolore",
       "isActive": true
     },
@@ -35,7 +35,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-3.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/potion",
       "title": "pariatur cillum et",
       "isActive": true
     },
@@ -48,7 +48,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-4.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/wand",
       "title": "pariatur cillum dolore",
       "isActive": false
     },
@@ -61,7 +61,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-5.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/mace",
       "title": "enim ad tempor",
       "isActive": true
     },
@@ -74,7 +74,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-6.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/helmet",
       "title": "enim Lorem fugiat",
       "isActive": false
     },
@@ -87,7 +87,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-7.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/armor",
       "title": "consectetur sit anim",
       "isActive": false
     },
@@ -100,7 +100,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": false,
-      "thumbnil": "marketplace-product-8.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/pants",
       "title": "consectetur sunt duis",
       "isActive": true
     },
@@ -113,7 +113,7 @@
       "eth_price": "75,320 ETH",
       "usd_price": "773.69  USD",
       "whishlisted": true,
-      "thumbnil": "marketplace-product-9.jpg",
+      "thumbnail": "https://loremflickr.com/600/600/whip",
       "title": "officia ad reprehenderit",
       "isActive": true
     }
