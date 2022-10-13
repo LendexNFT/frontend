@@ -5,10 +5,7 @@ import localImgLoad from "../../lib/localImgLoad";
 import CountDown from "../Helpers/CountDown";
 import Icons from "../Helpers/Icons";
 
-export default function BorrowStatusCard ({ datas, hidden = false }) {
-
-  console.log("datas", datas);
-
+export default function LoanStatusCard ({ datas, hidden = false }) {
   const [addFavorite, setValue] = useState(false);
   const favoriteHandler = () => {
     if (!addFavorite) {
@@ -89,7 +86,8 @@ export default function BorrowStatusCard ({ datas, hidden = false }) {
             />
           </div>
           <p className="text-sm text-thin-light-gray">
-            Loaned from
+            Loaned to
+
             <Link to="/user-profile" className="text-purple ml-1">
               {datas.username}
             </Link>
@@ -105,7 +103,7 @@ export default function BorrowStatusCard ({ datas, hidden = false }) {
             {datas.title}
           </Link>
           {/* countdown */}
-          <div className="w-full h-[54px] flex justify-evenly items-center p-2 rounded-lg border border-[#E3E4FE]">
+          <div className="w-full h-[54px] flex justify-evenly items-center p-1 rounded-lg border border-[#E3E4FE]">
             <div className="flex flex-col justify-between">
               <p className="text-sm text-thin-light-gray tracking-wide">
                 Interests:

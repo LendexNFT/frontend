@@ -5,10 +5,10 @@ import localImgLoad from "../../lib/localImgLoad";
 import CountDown from "../Helpers/CountDown";
 import Icons from "../Helpers/Icons";
 
-export default function BorrowStatusCard ({ datas, hidden = false }) {
+export default function LendStatusCard ({ datas, hidden = false }) {
 
-  console.log("datas", datas);
 
+  console.log("datasssss", datas);
   const [addFavorite, setValue] = useState(false);
   const favoriteHandler = () => {
     if (!addFavorite) {
@@ -89,7 +89,8 @@ export default function BorrowStatusCard ({ datas, hidden = false }) {
             />
           </div>
           <p className="text-sm text-thin-light-gray">
-            Loaned from
+            Loaned to
+
             <Link to="/user-profile" className="text-purple ml-1">
               {datas.username}
             </Link>
@@ -108,11 +109,9 @@ export default function BorrowStatusCard ({ datas, hidden = false }) {
           <div className="w-full h-[54px] flex justify-evenly items-center p-2 rounded-lg border border-[#E3E4FE]">
             <div className="flex flex-col justify-between">
               <p className="text-sm text-thin-light-gray tracking-wide">
-                Interests:
+                Current Bid
               </p>
-
-              <p className={`text-xs ${datas.interest === 'Paid' ? 'text-green-600' : 'text-red-400'}`}>{datas.interest}</p>
-              <p className="text-sm font-bold tracking-wide text-dark-gray">
+              <p className="text-base font-bold tracking-wide text-dark-gray">
                 {datas.price}
               </p>
             </div>
