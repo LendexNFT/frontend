@@ -15,11 +15,10 @@ export default function YourBorrowsWidget () {
       <div className="my-wallets w-full h-full overflow-auto overflow-x-auto bg-white rounded-lg p-6">
         <div className="mb-4">
           <h1 className="text-xl font-bold tracking-wide text-dark-gray">
-            My loan orders
+            Assets required
           </h1>
         </div>
         <div className="content-area">
-
 
           {yourBorrowsCart.map(product => (
 

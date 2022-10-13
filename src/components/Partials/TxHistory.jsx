@@ -4,20 +4,20 @@ import dataImage2 from "../../assets/images/data-table-user-2.png";
 import dataImage3 from "../../assets/images/data-table-user-3.png";
 import dataImage4 from "../../assets/images/data-table-user-4.png";
 
-export default function TxHistory ({ className }) {
+export default function TxHistory ({ className, gridTitle, maxHeight }) {
   return (
     <div className={`update-table w-full p-8 bg-white overflow-hidden rounded-2xl section-shadow ${className || ""}`}>
       <div className="header w-full sm:flex justify-between items-center mb-5">
         <div className="flex space-x-2 items-center mb-2 sm:mb-0">
           <h1 className="text-xl font-bold text-dark-gray tracking-wide">
-            LAST TRANSACTIONS
+            { gridTitle || "TRANSACTIONS HISTORY" }
           </h1>
           <span className="w-7 h-7 flex justify-center items-center bg-pink text-white text-xs rounded-full">
-            5
+            50
           </span>
         </div>
       </div>
-      <div className="relative w-full overflow-x-auto sm:rounded-lg">
+      <div className={`relative w-full overflow-auto sm:rounded-lg ${maxHeight || ""}`}>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tbody>
             <tr className="text-base text-thin-light-gray whitespace-nowrap px-2 border-b default-border-bottom ">
