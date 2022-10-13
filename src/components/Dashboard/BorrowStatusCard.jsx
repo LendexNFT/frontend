@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Icons from '../Helpers/Icons';
 import HiddenSvg from '../Partials/HiddenSvg';
+import CountDown from '../Helpers/CountDown';
 
 export default function BorrowStatusCard({ objects }) {
 	const hidden = false;
@@ -11,7 +12,7 @@ export default function BorrowStatusCard({ objects }) {
 
 	const [addFavorite, setValue] = useState(false);
 
-	// {require(`../../assets/images/${objects.image}`)} 
+	// {require(`../../assets/images/${objects.image}`)}
 
 	const favoriteHandler = () => {
 		if (!addFavorite) {
@@ -46,7 +47,24 @@ export default function BorrowStatusCard({ objects }) {
 						<h2 className='text-2xl font-bold text-center text-dark-gray'>{objects.name}</h2>
 					</div>
 					<div className='icon mt-2 flex justify-center items-center'>
-						<img src={require(`../../assets/images/${objects.image}`)} alt='' className='w-full h-full' />
+						<img src={require(`../../assets/images/${objects.image}`)} alt='' className='w-1/2 h-1/2' />
+					</div>
+					<div className='w-full h-[54px] mt-10 flex justify-evenly items-center p-2 rounded-lg border border-[#E3E4FE]'>
+						<div className='flex flex-col justify-between'>
+							<p className='text-sm text-thin-light-gray tracking-wide'>Interests:</p>
+
+							<p className={`text-xs ${objects.interest === 'Paid' ? 'text-green-600' : 'text-red-400'}`}>
+								{objects.interest}
+							</p>
+							<p className='text-sm font-bold tracking-wide text-dark-gray'>{objects.price}</p>
+						</div>
+						<div className='w-[1px] h-full bg-[#E3E4FE]'></div>
+						<div className='flex flex-col justify-between'>
+							<p className='text-sm text-thin-light-gray tracking-wide'>Remaing Time</p>
+							<p className='text-base font-bold tracking-wide text-dark-gray'>
+								<CountDown lastDate={objects.remaing} />
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
