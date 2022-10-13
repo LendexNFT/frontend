@@ -35,9 +35,6 @@ export default function MyAssetsItem ({ product }) {
     });
   }
 
-
-
-
   const onSubmit = (data) => {
     console.log(data);
   }
@@ -56,7 +53,6 @@ export default function MyAssetsItem ({ product }) {
 
   console.log(errors, rest);
 
-
   const includeAddressReserved = watch('includeAddressReserved');
 
   console.log(balanceDropdown);
@@ -66,7 +62,6 @@ export default function MyAssetsItem ({ product }) {
         <div className="flex justify-between items-center">
           <div className="account-name flex space-x-4 items-center">
             <div className="icon w-14 h-14 flex justify-center items-center">
-              {/* <img src={transaction1} alt="" className="" /> */}
               <img src={require(`../../assets/images/${product.image}`)} alt="" className="w-full h-full" />
             </div>
             <div>
@@ -88,24 +83,12 @@ export default function MyAssetsItem ({ product }) {
             </div>
           </div>
           <div>
-            {/* <button
-            type="button"
-              onClick={() => {
-                yuorSuppliesAssetsDispatch({
-                  type: "ADD_TO_CART",
-                  payload: product,
-                });
-              }}
-            className="btn-shine w-[98px] h-[33px] text-white rounded-full text-sm bg-pink flex justify-center items-center"
-          >
-            Add
-          </button> */}
             <button
               onClick={() => addMoneyHandler()}
               type="button"
-              className="w-[92px] flex justify-center items-center btn-gradient text-base rounded-full text-white"
+              className="w-[110px] h-[33px] flex justify-center items-center btn-gradient text-base rounded-full text-white"
             >
-              Lend
+              Add to order
             </button>
             <p className="usd text-base text-light-green text-right mr-2">
               <Link
@@ -114,7 +97,7 @@ export default function MyAssetsItem ({ product }) {
                   id: product.id
                 }}
               >
-                view detail
+                View details
               </Link>
             </p>
           </div>

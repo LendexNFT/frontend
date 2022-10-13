@@ -18,9 +18,9 @@ export default function Overview () {
         <div className="home-page-wrapper">
           <CreateOrder />
         </div>
-        <SwapOrders className="mb-10" />
-        <LendBorrowOrders className="mb-10" />
-        <TxHistory className="mb-10" />
+        <SwapOrders className="mb-10" gridTitle="LAST SWAP ORDERS" maxHeight="max-h-96"/>
+        <LendBorrowOrders className="mb-10" gridTitle="LAST LENDING/BORROWING ORDERS" maxHeight="max-h-96"/>
+        <TxHistory className="mb-10" gridTitle="LAST TRANSACTIONS" maxHeight="max-h-96"/>
       </Layout>
     </>
   );

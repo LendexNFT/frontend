@@ -16,13 +16,9 @@ export default function YourSupliesWidget () {
   //   });
   // }
 
-
-
   console.log('yourSuppliesCart', yourSuppliesCart);
   return (
-
     <>
-
       <div className="recent-transaction-widget overflow-auto overflow-x-auto w-full h-full p-7 rounded-2xl bg-white">
         <div className="relative w-full overflow-auto overflow-x-auto sm:rounded-lg">
           <div className="heading sm:flex justify-between items-center">
@@ -40,7 +36,7 @@ export default function YourSupliesWidget () {
                 {/* <td className="py-4 text-center">Browsers</td>  */}
                 <td className="py-4 text-center">Assets</td>
                 <td className="py-4 text-center">Qty</td>
-                <td className="py-4 text-center">Status</td>
+                <td className="py-4 text-center">Action</td>
                 {/* <td className="py-4 text-center"></td> */}
               </tr>
 

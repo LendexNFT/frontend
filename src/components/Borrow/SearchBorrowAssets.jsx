@@ -53,7 +53,7 @@ export default function SearchBorrowAssets () {
         <div className="heading flex justify-between items-center">
           {/* <h3 className="w-1/5 text-xl font-bold text-dark-gray"> */}
           <h3 className="w-2/5 text-xl font-bold text-dark-gray">
-            What I need!
+            What I'm looking for
           </h3>
           {/* <SearchCom /> */}
           <div className="w-4/5 h-[48px]  pl-8 bg-white flex rounded-full overflow-hidden  border-2">

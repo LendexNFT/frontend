@@ -1,5 +1,4 @@
 import React from 'react';
-import transaction1 from "../../assets/images/recent-transation-1.png";
 import { CartState } from '../../context/Context';
 
 export default function WhatIneedItem ({ product }) {
@@ -11,10 +10,12 @@ export default function WhatIneedItem ({ product }) {
 
   return (
     <li key={product.id} className="content-item py-3 border-b border-light-purple hover:border-purple">
+    
       <div className="flex justify-between items-center">
         <div className="account-name flex space-x-4 items-center">
           <div className="icon w-14 h-14 flex justify-center items-center">
-            <img src={transaction1} alt="" className="" />
+            {/* <img src={transaction1} alt="" className="" /> */}
+            <img src={require(`../../assets/images/${product.image}`)} alt="" className="w-full h-full" />
           </div>
           <div>
             <div className="name">
@@ -43,15 +44,17 @@ export default function WhatIneedItem ({ product }) {
                 payload: product,
               });
             }}
-            className="btn-shine w-[98px] h-[33px] text-white rounded-full text-sm bg-pink flex justify-center items-center"
+            className="w-[110px] h-[33px] flex justify-center items-center btn-gradient text-base rounded-full text-white"
           >
-            Request
+            Add to order
           </button>
-          <p className="usd text-base text-light-green text-right">
+          {/* <p className="usd text-base text-light-green text-right">
             +324.75
-          </p>
+          </p> */}
         </div>
       </div>
+
+
     </li>
 
   );
