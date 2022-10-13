@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { CartState } from '../../context/Context';
 import useToggle from "../../hooks/useToggle";
 import ModalCom from "../Helpers/ModalCom";
+import SearchAssetToBorrow from "./SearchBorrowAssets";
+import YourBorrowsWidget from "./YourBorrowsWidget";
 
 export default function MyAssetsItem ({ product }) {
 
@@ -105,10 +107,11 @@ export default function MyAssetsItem ({ product }) {
       </li>
       {moneyPopup && (
         <ModalCom action={addMoneyHandler} situation={moneyPopup}>
-          <div className="lg:w-[580px] sm:w-[450px] w-full rounded-2xl h-auto bg-white">
-            <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-6 flex items-center justify-between">
+          {/* <div className="lg:w-[680px] sm:w-[550px] w-full rounded-2xl h-auto bg-white overflow-auto"> */}
+          <div className="lg:w-[980px] w-full rounded-2xl bg-white">
+            <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-3 flex items-center justify-between">
               <h3 className="text-xl font-bold text-dark-gray">
-                I want to LEND
+                Set Lending Order
               </h3>
               <span onClick={addMoneyHandler}>
                 <svg
@@ -132,140 +135,95 @@ export default function MyAssetsItem ({ product }) {
               </span>
             </div>
             <div className="content lg:px-7 px-3 sm:px-5 py-8">
-
               <form onSubmit={handleSubmit(onSubmit)}>
-
-                <div>
-                  <label className="font-semibold text-gray-900 dark:text-white">Asset</label>
-                  <input type="text" value={product.name} disabled className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-      invalid:border-pink-500 invalid:text-pink-600
-      focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-    "                  />
-                </div>
-
-                <div>
-                  <h3 className="mt-4 font-semibold text-gray-900 dark:text-white">Contract</h3>
-                  <ul className="items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-                      <div className="flex items-center pl-3">
-                        <input id="horizontal-list-radio-ERC20" type="radio" value="" name="list-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                        <label className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">ERC20 </label>
-                      </div>
-                    </li>
-                    <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-                      <div className="flex items-center pl-3">
-                        <input id="horizontal-list-radio-ERC721" type="radio" value="" name="list-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                        <label className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">ERC721</label>
-                      </div>
-                    </li>
-                    <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-                      <div className="flex items-center pl-3">
-                        <input id="horizontal-list-radio-ERC1155" type="radio" value="" name="list-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                        <label className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">ERC1155</label>
-                      </div>
-                    </li>
-                    <li className="w-full dark:border-gray-600">
-                      <div className="flex items-center pl-3">
-                        <input id="horizontal-list-radio-ERC4907" type="radio" value="" name="list-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                        <label className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">ERC4907</label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-
-
-
-                <div className="flex mt-5 mb-1">
-                  <div className="w-1/3 ...">
-                    <div className="relative flex items-start">
-                      <div className="flex items-center h-5">
-                        <span className='font-semibold text-gray-900 dark:text-white'>Interest to be paid</span>
-                      </div>
-
-                    </div>
+                
+                
+                <div className="h-90 grid grid-cols-2 gap-4 content-start mb-8 pb-4 border-b-2">
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-gray">
+                      My asset
+                    </h3>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-gray">
+                      Requested collateral assets
+                    </h3>
                   </div>
 
-
-
-                </div>
-
-                <div className="flex mb-5">
-                  <div className="w-1/4 ...">
-                    <div className="relative flex items-start">
-                      {/* <div className="flex items-center h-5">
-                        <span>interestToBePaid</span>
-                      </div> */}
-                      <div className="text-sm">
-                        <div>
-                          <input type="text"
-                            name="interestToBePaid"
-                            id="interestToBePaid"
-                            // checked={disableUI} 
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
-                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
-                    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Qty" required
-                          />
-                        </div>
-
-                      </div>
+                  <div className="account-name flex space-x-4 content-start">
+                    <div className="icon w-14 h-14 flex justify-center items-center">
+                      <img src={require(`../../assets/images/${product.image}`)} alt="" className="w-full h-full" />
                     </div>
-                  </div>
-
-                  <div className="w-3/4 ml-1">
                     <div>
-                      {/* <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Contract to request interest</label> */}
+                      <div className="name">
+                        <p className="text-base text-dark-gray font-medium mb-1">
+                          {product.name} <span>- ID #{product.id} - QTY: 1</span>
+                        </p>
+                      </div>
+                      <div className="time">
+                        <p className="text-sm text-thin-light-gray font-medium">
+                          {product.title}
+                        </p>
+                      </div>
+                      <div className="time">
+                        <p className="text-sm text-thin-light-gray font-medium">
+                          {product.wallet}
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div>
+                    <SearchAssetToBorrow />
+                  </div>
+
+                </div>
+
+
+                <div className="grid grid-cols-3 gap-4 content-center">
+                  <div className="">
+                    <span className='font-semibold text-gray-900 dark:text-white'>Interests to be paid:</span>
+                  </div>
+                  <div>
+                    <input type="text"
+                      name="interestToBePaid"
+                      id="interestToBePaid"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                      focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                      dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Qty" required
+                    />
+                  </div>
+
+                  <div className="">
                       <input type="text"
                         name="contractToRequestInterest"
                         id="contractToRequestInterest"
-                        // checked={disableUI} 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                     dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Contract to request interest "
+                        placeholder="Select Asset or Type Contract Address"
                         required
                       />
-                    </div>
                   </div>
 
-                </div>
-
-
-
-
-
-                <div className="flex mt-5">
-                  <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">For how many time? </label>
-                  <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                    className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 
-                    bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white rounded-l-lg hover:bg-gray-200 focus:ring-4 
-                    focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" type="button">
-                    For how long:
-                  </button>
-
-                  <div className="relative w-full">
-
-                    <input
-                      label="assetsToLend"
-                      id="assetsToLend"
-                      className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                      {...register("assetsToLend", { required: "please enter assetsToLend" })}
-                    />
-
-                    <button
-                      type="submit"
-
-                      className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      days
-                    </button>
-
+                  <div className="">
+                    <span className="font-semibold text-gray-900 dark:text-white">Loan Terms (in days):</span>
                   </div>
 
+                  <div className="">
+                    <input type="text"
+                        name="howLong"
+                        id="howLong"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                        dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="How long (Days)" required
+                      />
+                    
+                  </div>
                 </div>
+                
                 <div className="relative w-full">
-
                   {errors.assetsToLend && (
                     <span className="bg-yellow-400">{errors.assetsToLend?.message}</span>
                   )}
@@ -285,9 +243,8 @@ export default function MyAssetsItem ({ product }) {
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="candidates" className="font-semibold text-gray-900 dark:text-white">
-                          Reserved for address?
+                          Reserve for an address
                         </label>
-
                       </div>
                     </div>
                   </div>
@@ -301,13 +258,14 @@ export default function MyAssetsItem ({ product }) {
                           // checked={disableUI} 
                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
-                    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your wallet address " required
+                    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Add wallet address..." required
                         />
                       </div>
                     </div>
                   )}
                 </div>
 
+                <YourBorrowsWidget />
 
                 <button
                   // className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border py-3 px-6 font-semibold text-md rounded"
@@ -321,8 +279,6 @@ export default function MyAssetsItem ({ product }) {
                   All set
                 </button>
               </form>
-
-
             </div>
           </div>
         </ModalCom>
@@ -334,7 +290,7 @@ export default function MyAssetsItem ({ product }) {
             <div className="lg:w-[450px] sm:w-[350px] w-full rounded-2xl h-auto bg-white">
               <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-6 flex items-center justify-between">
                 <h3 className="text-xl font-bold text-dark-gray">
-                  I lending
+                  Confirm Order
                 </h3>
                 <span onClick={confirmationLendHandler}>
                   <svg
@@ -358,62 +314,51 @@ export default function MyAssetsItem ({ product }) {
                 </span>
               </div>
               <div className="content lg:px-7 px-3 sm:px-5 py-8">
-
+                <div className="heading text-center">
+                  <h1 className="text-xl font-bold text-dark-gray">
+                    You're about to creat a Lending order:
+                  </h1>
+                </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="chart-analysis mt-5">
-                    {/* <div className="heading text-center">
-                      <h1 className="text-base font-medium text-dark-gray mb-4">
-                        Your All Artwork Statistics
-                      </h1>
-                    </div> */}
                     <div className="deatil-order-list">
                       <ul>
                         <li className="flex items-center mb-3.5">
-                          <span className="w-4 h-4 bg-light-purple rounded-full block mr-2"></span>
                           <div>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
-                              Block orders :
+                            <p className="text-base text-dark-gray font-medium mb-1">
+                              <span>QTY: 1    {product.name} - ID #{product.id}</span>
+                            </p>
+                          </div>
+                        </li>
+                        <li className="flex items-center mb-3.5">
+                          <div>
+                            <p className="text-base text-dark-gray font-medium mb-1">
+                              <span>Collateral Asset  {product.name} - ID #{product.id}</span>
+                            </p>
+                          </div>
+                        </li>
+                        <li className="flex items-center mb-3.5">
+                          <div>
+                            <span className="text-base text-dark-gray font-medium mb-1">
+                              Charging an interest of:
                             </span>
-                            <span className="text-sm text-dark-gray font-bold text-xl">
-                              2
+                            <span className="text-base text-dark-gray font-medium mb-1">
+                              20
+                            </span>
+                            <span className="text-base text-dark-gray font-medium mb-1">
+                              <>&nbsp;&nbsp;</>$MATIC
                             </span>
                           </div>
                         </li>
                         <li className="flex items-center mb-3.5">
-                          <span className="w-4 h-4 bg-purple rounded-full block mr-2"></span>
                           <div>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
-                              Shield waranty :
+                            <span className="text-base text-dark-gray font-medium mb-1">
+                              Loan term:
                             </span>
-                            <span className="text-sm text-dark-gray font-bold text-xl">
-                              1
+                            <span className="text-base text-dark-gray font-medium mb-1">
+                              20
                             </span>
-                          </div>
-                        </li>
-                        <li className="flex items-center mb-3.5">
-                          <span className="w-4 h-4 bg-pink rounded-full block mr-2"></span>
-                          <div>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
-                              Interest :
-                            </span>
-                            <span className="text-sm text-dark-gray font-bold text-xl">
-                              43
-                            </span>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
-                              <>&nbsp;&nbsp;</>MATIC
-                            </span>
-                          </div>
-                        </li>
-                        <li className="flex items-center mb-3.5">
-                          <span className="w-4 h-4 bg-[#FFCD00] rounded-full block mr-2"></span>
-                          <div>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
-                              Open for :
-                            </span>
-                            <span className="text-sm text-dark-gray font-bold text-xl">
-                              45
-                            </span>
-                            <span className="text-sm text-thin-light-gray mr-2 text-xl">
+                            <span className="text-base text-dark-gray font-medium mb-1">
                               <>&nbsp;&nbsp;</> days
                             </span>
                           </div>
@@ -449,7 +394,7 @@ export default function MyAssetsItem ({ product }) {
                         }}
                         className="w-[122px] h-11 flex justify-center items-center btn-gradient text-base rounded-full text-white"
                       >
-                        Edit
+                        Cancel
                       </button>
                     </div>
 
@@ -466,7 +411,7 @@ export default function MyAssetsItem ({ product }) {
             <div className="lg:w-[450px] sm:w-[350px] w-full rounded-2xl h-auto bg-white">
               <div className="heading border-b border-light-purple lg:px-7 sm:px-5 px-3 py-6 flex items-center justify-between">
                 <h3 className="text-xl font-bold text-dark-gray">
-                  {/* I lending */}
+                  Transaction sent to blockchain
                 </h3>
                 <span onClick={lendOrderReadyHandler}>
                   <svg
@@ -492,20 +437,10 @@ export default function MyAssetsItem ({ product }) {
               <div className="content lg:px-7 px-3 sm:px-5 py-8">
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="ready-order-text mt-5">
-                    {/* <div className="heading text-center">
-                      <h1 className="text-base font-medium text-dark-gray mb-4">
-                        Your All Artwork Statistics
-                      </h1>
-                    </div> */}
                     <div className="ready-order">
-                      <div className="mb-8 border-2 border-lime-400 p-[23px] rounded-lg">
-                        <p className='text-[18px] font-bold'>¡Your order is ready!</p>
-                        <p className='text-[18px]'>
-                          You can see it in your dashboard along with your other open orders and your history</p>
-                      </div>
+                        <p className="text-[22px] py-6">
+                          You can see the order in your dashboard along with your orders history</p>
                     </div>
-                  </div>
                   <div className="sm:flex justify-self-center items-center pt-5 border-t border-light-purple">
                     <div>
                       <button
@@ -519,22 +454,10 @@ export default function MyAssetsItem ({ product }) {
                         }}
                         className="w-[182px] h-11 flex justify-center items-center btn-gradient text-base rounded-full text-white"
                       >
-                        Back to dashboard
+                        Close
                       </button>
                     </div>
-                    {/* <div>
-                      <button
-                        type="submit"
-                        onClick={() => {
-                          lendOrderReadyHandler();
-                          addMoneyHandler();
-                        }}
-                        className="w-[122px] h-11 flex justify-center items-center btn-gradient text-base rounded-full text-white"
-                      >
-                        Edit
-                      </button>
-                    </div> */}
-
+                 
                   </div>
                 </form>
               </div>

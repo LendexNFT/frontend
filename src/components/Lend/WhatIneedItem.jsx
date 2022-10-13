@@ -48,15 +48,9 @@ export default function WhatIneedItem ({ product }) {
           >
             Add to order
           </button>
-          {/* <p className="usd text-base text-light-green text-right">
-            +324.75
-          </p> */}
         </div>
       </div>
-
-
     </li>
-
   );
 }
 
