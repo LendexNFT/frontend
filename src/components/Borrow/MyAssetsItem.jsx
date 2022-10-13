@@ -88,24 +88,13 @@ export default function MyAssetsItem ({ product }) {
             </div>
           </div>
           <div>
-            {/* <button
-            type="button"
-              onClick={() => {
-                yuorSuppliesAssetsDispatch({
-                  type: "ADD_TO_CART",
-                  payload: product,
-                });
-              }}
-            className="btn-shine w-[98px] h-[33px] text-white rounded-full text-sm bg-pink flex justify-center items-center"
-          >
-            Add
-          </button> */}
+           
             <button
               onClick={() => addMoneyHandler()}
               type="button"
-              className="w-[92px] flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-base rounded-full text-white"
+              className="w-[110px] h-[33px] flex justify-center items-center btn-gradient text-base rounded-full text-white"
             >
-              Borrow
+              Add to order
             </button>
             <p className="usd text-base text-light-green text-right mr-2">
               <Link
@@ -114,7 +103,7 @@ export default function MyAssetsItem ({ product }) {
                   id: product.id
                 }}
               >
-                view detail
+                View details
               </Link>
             </p>
           </div>

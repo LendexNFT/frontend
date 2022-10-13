@@ -6,7 +6,6 @@ import Layout from "../Partials/Layout";
 import LendBorrowOrders from "../Partials/LendBorrowOrders";
 import SwapOrders from "../Partials/SwapOrders";
 import TxHistory from "../Partials/TxHistory";
-// import MyLoanStatus from "./MyLoanStatus";
 
 export default function Overview () {
   // const allBids = datas.datas;
@@ -19,19 +18,9 @@ export default function Overview () {
         <div className="home-page-wrapper">
           <CreateOrder />
         </div>
-        {/* <MyLendStatus allLends={allLends} className="mb-10" />
-        <MyBorrowStatus allBorrows={allBorrows} className="mb-10" /> */}
-        
-        {/*
-        *************    TODO    ****************
-        Componente para mostrar Ordenes de Swap Abiertas
-        Componente para mostrar Ordenes de lending/borrowing abiertas
-        
-
-      */}
-        <SwapOrders className="mb-10" />
-        <LendBorrowOrders className="mb-10" />
-        <TxHistory className="mb-10" />
+        <SwapOrders className="mb-10" gridTitle="LAST SWAP ORDERS" maxHeight="max-h-96"/>
+        <LendBorrowOrders className="mb-10" gridTitle="LAST LENDING/BORROWING ORDERS" maxHeight="max-h-96"/>
+        <TxHistory className="mb-10" gridTitle="LAST TRANSACTIONS" maxHeight="max-h-96"/>
       </Layout>
     </>
   );
