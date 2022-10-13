@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import CreateOrder from '../Partials/CreateOrder';
 import Layout from '../Partials/Layout';
 import TxHistory from '../Partials/TxHistory';
 import BorrowStatusCard from './BorrowStatusCard';
-import apiCall from '../../data/marketplace_data.json';
+import { CartState } from '../../context/Context';
 
 export default function Nubicuo() {
-	console.log('Parent :>> ', apiCall.data);
-	const objects = apiCall.data;
+	const {
+		state: { products },
+	} = CartState();
+
+	const [objects] = useState(products);
 
 	function BorrowStatusCards(cards) {
 		return cards.map((card) => <BorrowStatusCard key={card.id} objects={card} />);
