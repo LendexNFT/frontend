@@ -21,7 +21,7 @@ export default function OpenSwapOrders ({ className, gridTitle, maxHeight }) {
           </span>
         </div>
       </div>
-      <div className={`relative w-full overflow-auto sm:rounded-lg ${maxHeight || ""}`}>>
+      <div className={`relative w-full overflow-auto sm:rounded-lg ${maxHeight || ""}`}>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tbody>
             <tr className="text-base text-thin-light-gray whitespace-nowrap px-2 border-b default-border-bottom ">

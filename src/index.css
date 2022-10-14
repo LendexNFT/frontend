@@ -482,7 +482,7 @@ input[type="number"] {
 /* TODO: =================================modal================================= */
 .children-element {
   left: 50%;
-  top: 175px;
+  top: 50px;
   transform: translate(-50%, 0px);
 }
 .modal-com {
