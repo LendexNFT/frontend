@@ -50,9 +50,9 @@ export default function SearchBorrowAssets () {
         {/* <div className="heading mb-5 flex justify-between items-center"> */}
         <div className="heading flex justify-between items-center">
           {/* <h3 className="w-1/5 text-xl font-bold text-dark-gray"> */}
-          <h3 className="w-2/5 text-xl font-bold text-dark-gray">
-            What I'm looking for
-          </h3>
+          <h4 className="w-2/5 text-xl text-dark-gray">
+            Search
+          </h4>
           {/* <SearchCom /> */}
           <div className="w-4/5 h-[48px]  pl-8 bg-white flex rounded-full overflow-hidden  border-2">
             <div className="w-6 h-full flex justify-center items-center mr-2.5 text-dark-gray">
@@ -69,37 +69,15 @@ export default function SearchBorrowAssets () {
             </div>
           </div>
         </div>
-
-{/* 
-                <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
-                  <div className="heading mb-5 flex justify-between items-center">
-                    <h3 className="text-xl font-bold text-dark-gray">
-                      My Assets
-                    </h3>
-                  </div>
-                  <div className="h-[286px]">
-                    <MyAssetsWidget />
-                  </div>
-                  <div className="h-[286px]">
-                    <MyAssetsWidget />
-                  </div>
-                </div> */}
-
-
         <div className="h-[286px]">
-          {/* <WhatIneedWidget /> */}
-
-
           <div className="recent-transaction-widget overflow-auto overflow-x-auto w-full h-full p-7 rounded-2xl bg-white">
             <div className="heading sm:flex justify-between items-center">
             </div>
-            
             <div className="content">
               <ul>
                 {data.map(product => <WhatIneedItem key={product.id} product={product} />)}
               </ul>
             </div>
-
           </div>
         </div>
       </div>
