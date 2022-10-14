@@ -9,7 +9,7 @@ export default function MyLendStatus({ className, allLends = [], title = 'My Ass
 		<>
 			<div className={`m-2 all-bid-section w-full ${className || ''}`}>
 				<div className='mb-5'>
-					<h1 className='text-26 font-bold text-dark-gray'>{title}</h1>
+					<h1 className='text-26 font-bold text-dark-gray'>My {title}</h1>
 				</div>
 				<div className='w-full'>
 					<div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 2xl:gap-8 xl:gap-5 gap-5 mb-10'>

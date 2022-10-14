@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { faker } from '@faker-js/faker';
 import dataLens from '../../data/lend_data.json';
 import CreateOrder from '../Partials/CreateOrder';
 import Layout from '../Partials/Layout';
@@ -7,6 +8,18 @@ import MyLendStatus from './MyLendStatus';
 
 export default function Nubicuo() {
 	const allLends = dataLens.data;
+	const randomPhotos = [
+		'marketplace-product-1.jpg',
+		'marketplace-product-2.jpg',
+		'marketplace-product-3.jpg',
+		'marketplace-product-4.jpg',
+		'marketplace-product-5.jpg',
+		'marketplace-product-6.jpg',
+		'tranding-1.jpg',
+		'tranding-2.jpg',
+		'tranding-3.jpg',
+		'tranding-4.jpg',
+	];
 
 	const [selectedButton, setSelectedButton] = useState('Assets');
 	const [selectedOrder, setSelectedOrder] = useState(allLends);
@@ -17,6 +30,9 @@ export default function Nubicuo() {
 			const number = `${Math.floor(Math.random() * 999)},${Math.floor(Math.random() * 999)} ETH`;
 			console.log(number);
 			allLends[i].price = number;
+			allLends[i].thumbnil = randomPhotos[Math.floor(Math.random() * randomPhotos.length)];
+			allLends[i].title = faker.commerce.product();
+			allLends[i].remaing = faker.date.future();
 			setSelectedOrder(allLends);
 		}
 	}
@@ -89,7 +105,7 @@ export default function Nubicuo() {
 						</button>
 					</div>
 				</div>
-				<MyLendStatus allLends={selectedOrder} className='mt-5 mb-10' />
+				<MyLendStatus allLends={selectedOrder} title={selectedButton} className='mt-5 mb-10' />
 				<TxHistory className='mb-10' />
 			</Layout>
 		</>
