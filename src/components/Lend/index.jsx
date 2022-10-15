@@ -1,9 +1,6 @@
 import Layout from "../Partials/Layout";
 import LendBorrowOrders from "../Partials/LendBorrowOrders";
 import MyAssetsWidget from "./MyAssetsWidget";
-import SearchBorrowAssets from "./SearchBorrowAssets";
-import YourBorrowsWidget from "./YourBorrowsWidget";
-import YourSupliesWidget from "./YourSupliesWidget";
 
 export default function Lend () {
   return (
@@ -14,9 +11,6 @@ export default function Lend () {
             <div className="mb-5"><h1 className="text-26 font-bold text-dark-gray">Create Lending Order</h1></div>
             {/* Continer Assets Supply and Assets Borrow widgets */}
             <div className="recent-and-investment grid lg:grid-cols-2 grid-cols-1 2xl:gap-[40px] xl:gap-7 gap-4 lg:h-[416px] w-full  justify-between">
-              {/* <div className=" h-full">
-                <MyAssetsWidget />
-              </div> */}
               <div className=" h-full">
                 <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
                   {/* heading */}
@@ -30,34 +24,9 @@ export default function Lend () {
                   </div>
                 </div>
               </div>
-              <div className=" h-full">
-                <SearchBorrowAssets />
-              </div>
-            </div>
-            {/* Continer Assets Supply and Assets Borrow widgets */}
-            <div className="recent-and-investment grid lg:grid-cols-2 grid-cols-1 2xl:gap-[40px] xl:gap-7 gap-4 lg:h-[416px] w-full  justify-between">
-              {/* <div className=" h-full">
-                <MyAssetsWidget />
-              </div> */}
-              <div className=" h-full">
-                <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
-                  {/* content */}
-                  <div className="h-[286px]">
-                    <YourSupliesWidget />
-                  </div>
-                </div>
-              </div>
-              <div className=" h-full">
-                <div className="investment-widget w-full min-h-max p-4 rounded-2xl bg-white flex flex-col justify-between">
-                  {/* content */}
-                  <div className="h-[286px]">
-                    <YourBorrowsWidget />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          <LendBorrowOrders className="mb-10" gridTitle="MY LENDING ORDERS" />
+          <LendBorrowOrders className="mb-10" gridTitle="MY LENDING ORDERS" maxHeight="max-h-96" />
         </div>
       </Layout>
     </>

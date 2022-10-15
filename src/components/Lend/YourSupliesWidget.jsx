@@ -8,14 +8,6 @@ export default function YourSupliesWidget () {
     yuorSuppliesAssetsDispatch,
   } = CartState();
 
-  // function removeToLend (asset) {
-  //   console.log("removeToLend", asset);
-  //   yuorSuppliesAssetsDispatch({
-  //     type: "REMOVE_FROM_CART",
-  //     payload: asset,
-  //   });
-  // }
-
   console.log('yourSuppliesCart', yourSuppliesCart);
   return (
     <>

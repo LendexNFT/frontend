@@ -1,7 +1,6 @@
 import bank1 from "../../assets/images/bank-1.png";
 import { CartState } from "../../context/Context";
-import IncDecCounter from "./IncDecCounter";
-
+// import IncDecCounter from "./IncDecCounter";
 
 export default function YourBorrowsWidget () {
   const {
@@ -15,13 +14,11 @@ export default function YourBorrowsWidget () {
       <div className="my-wallets w-full h-full overflow-auto overflow-x-auto bg-white rounded-lg p-6">
         <div className="mb-4">
           <h1 className="text-xl font-bold tracking-wide text-dark-gray">
-            Assets required
+            Assets required as collateral
           </h1>
         </div>
         <div className="content-area">
-
           {yourBorrowsCart.map(product => (
-
             <div key={product.id} className="flex justify-between items-center mb-6">
               <div className="flex space-x-5 items-center">
                 <div className="account-name flex space-x-4 items-center">
@@ -39,29 +36,27 @@ export default function YourBorrowsWidget () {
               <div className="flex space-x-5 items-center">
                 <div>
                   <p className="text-base text-dark-gray whitespace-nowrap px-2">
-                    <IncDecCounter />
+                    {/* <IncDecCounter /> */}
+                    1
                   </p>
                   <p className="text-sm text-thin-light-gray text-center">
-                    <span className="text-light-red ml-1">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        yourBorrowsCart.map('')                      }
+                      className="text-sm px-[10px]  py-[6px] rounded-full bg-red-400 text-white capitalize"
+                    >
                       Remove
-                    </span>
+                    </button>
                   </p>
                 </div>
-
               </div>
             </div>
-
           )
           )}
 
-
-
-
         </div>
       </div>
-
-
-
     </>
   );
 }
