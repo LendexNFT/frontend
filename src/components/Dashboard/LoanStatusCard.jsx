@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaChevronDown, FaChevronLeft } from 'react-icons/fa';
 import localImgLoad from '../../lib/localImgLoad';
 import CountDown from '../Helpers/CountDown';
 import Icons from '../Helpers/Icons';
 
 export default function LoanStatusCard({ datas, hidden = false }) {
 	const [addFavorite, setValue] = useState(false);
+	const [showDropdown, setShowDropdown] = useState(false);
+	const [chevron, setChevron] = useState(false);
+
 	const favoriteHandler = () => {
 		if (!addFavorite) {
 			setValue(true);
@@ -16,6 +20,7 @@ export default function LoanStatusCard({ datas, hidden = false }) {
 			toast.warn('Remove to Favorite List');
 		}
 	};
+
 	return (
 		<div className='card-style-one flex flex-col justify-between w-full h-[387px] bg-white p-3 pb rounded-2xl'>
 			<div className='content'>
@@ -37,8 +42,50 @@ export default function LoanStatusCard({ datas, hidden = false }) {
 							>
 								<Icons name='love' />
 							</span>
-							<span className='w-7 h-7 flex justify-center items-center bg-white rounded-full cursor-pointer'>
-								<Icons name='dots' />
+							{showDropdown && (
+								<div
+									className='relative z-10 w-55 px-5 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5'
+									role='menu'
+									aria-orientation='vertical'
+									aria-labelledby='menu-button'
+									tabIndex='-1'
+								>
+									<div className='py-1' role='none'>
+										<a
+											href='http://localhost:3000/#/lend'
+											className='text-gray-700 block px-4 py-2 text-sm'
+											role='menuitem'
+											tabIndex='-1'
+											id='menu-item-0'
+										>
+											Lend
+										</a>
+										<a
+											href='http://localhost:3000/#/borrow'
+											className='text-gray-700 block px-4 py-2 text-sm'
+											role='menuitem'
+											tabIndex='-1'
+											id='menu-item-1'
+										>
+											Borrow
+										</a>
+										<a
+											href='http://localhost:3000/#/borrow'
+											className='text-gray-700 block px-4 py-2 text-sm'
+											role='menuitem'
+											tabIndex='-1'
+											id='menu-item-2'
+										>
+											Swap
+										</a>
+									</div>
+								</div>
+							)}
+							<span
+								className='w-7 h-7 flex justify-center items-center bg-white rounded-full cursor-pointer'
+								onClick={() => setShowDropdown(!showDropdown) && setChevron(!chevron)}
+							>
+								<span>{chevron ? <FaChevronLeft /> : <FaChevronDown />}</span>
 							</span>
 						</div>
 						{hidden && (
